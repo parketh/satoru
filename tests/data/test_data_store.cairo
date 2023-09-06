@@ -1,9 +1,6 @@
-use result::ResultTrait;
-use traits::{TryInto, Into};
 use starknet::{
     ContractAddress, get_caller_address, Felt252TryIntoContractAddress, contract_address_const
 };
-use debug::PrintTrait;
 use snforge_std::{declare, start_prank, stop_prank, ContractClassTrait};
 
 use satoru::data::data_store::{IDataStoreSafeDispatcher, IDataStoreSafeDispatcherTrait};
@@ -130,6 +127,50 @@ fn given_normal_conditions_when_u256_functions_then_expected_results() {
 }
 
 #[test]
+fn given_normal_conditions_when_i128_functions_then_expected_results() {
+    // *********************************************************************************************
+    // *                              SETUP                                                        *
+    // *********************************************************************************************
+    let (caller_address, role_store, data_store) = setup();
+
+    // *********************************************************************************************
+    // *                              TEST LOGIC                                                   *
+    // *********************************************************************************************
+
+    // Set key 1 to value 42.
+    data_store.set_i128(1, 42).unwrap();
+    let value = data_store.get_i128(1).unwrap();
+    // Check that the value read is 42.
+    assert(value == 42, 'Invalid value');
+
+    // Increment key 1 by 5.
+    let new_value = data_store.increment_i128(1, 5).unwrap();
+    // Check that the new value is 47.
+    assert(new_value == 47, 'Invalid value');
+    let value = data_store.get_i128(1).unwrap();
+    // Check that the value read is 47.
+    assert(value == 47, 'Invalid value');
+
+    // Decrement key 1 by 2.
+    let new_value = data_store.decrement_i128(1, 2).unwrap();
+    // Check that the new value is 45.
+    assert(new_value == 45, 'Invalid value');
+    let value = data_store.get_i128(1).unwrap();
+    // Check that the value read is 45.
+    assert(value == 45, 'Invalid value');
+
+    // Remove key 1.
+    data_store.remove_i128(1).unwrap();
+    // Check that the key was removed.
+    assert(data_store.get_i128(1).unwrap() == Default::default(), 'Key was not deleted');
+
+    // *********************************************************************************************
+    // *                              TEARDOWN                                                     *
+    // *********************************************************************************************
+    teardown(data_store.contract_address);
+}
+
+#[test]
 fn given_normal_conditions_when_address_functions_then_expected_results() {
     // *********************************************************************************************
     // *                              SETUP                                                        *
@@ -248,8 +289,7 @@ fn given_normal_conditions_when_order_functions_then_expected_results() {
 /// * `ContractAddress` - The address of the deployed data store contract.
 fn deploy_data_store(role_store_address: ContractAddress) -> ContractAddress {
     let contract = declare('DataStore');
-    let mut constructor_calldata = array![];
-    constructor_calldata.append(role_store_address.into());
+    let constructor_calldata = array![role_store_address.into()];
     contract.deploy(@constructor_calldata).unwrap()
 }
 
@@ -260,8 +300,7 @@ fn deploy_data_store(role_store_address: ContractAddress) -> ContractAddress {
 /// * `ContractAddress` - The address of the deployed role store contract.
 fn deploy_role_store() -> ContractAddress {
     let contract = declare('RoleStore');
-    let constructor_arguments: @Array::<felt252> = @ArrayTrait::new();
-    contract.deploy(constructor_arguments).unwrap()
+    contract.deploy(@array![]).unwrap()
 }
 
 /// Utility function to setup the test environment.

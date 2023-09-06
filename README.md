@@ -82,6 +82,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/drspacemn"><img src="https://avatars.githubusercontent.com/u/16685321?v=4?s=100" width="100px;" alt="drspacemn"/><br /><sub><b>drspacemn</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=drspacemn" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Sk8erboi84"><img src="https://avatars.githubusercontent.com/u/105498726?v=4?s=100" width="100px;" alt="Michel"/><br /><sub><b>Michel</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=Sk8erboi84" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/delaaxe"><img src="https://avatars.githubusercontent.com/u/1091900?v=4?s=100" width="100px;" alt="delaaxe"/><br /><sub><b>delaaxe</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=delaaxe" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/danilowhk"><img src="https://avatars.githubusercontent.com/u/12735159?v=4?s=100" width="100px;" alt="danilowhk"/><br /><sub><b>danilowhk</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=danilowhk" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ermvrs"><img src="https://avatars.githubusercontent.com/u/3417324?v=4?s=100" width="100px;" alt="Erim"/><br /><sub><b>Erim</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=ermvrs" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/parketh"><img src="https://avatars.githubusercontent.com/u/27808560?v=4?s=100" width="100px;" alt="parketh"/><br /><sub><b>parketh</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=parketh" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/enitrat"><img src="https://avatars.githubusercontent.com/u/60658558?v=4?s=100" width="100px;" alt="Mathieu"/><br /><sub><b>Mathieu</b></sub></a><br /><a href="https://github.com/keep-starknet-strange/satoru/commits?author=enitrat" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
